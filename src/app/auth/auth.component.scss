@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.image-wrapper {
+  background-image: url(../../assets/login-static-background.png);
+}
+
+img {
+  width: min-content;
+  object-fit: fill;
+}
