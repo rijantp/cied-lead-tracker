@@ -1,11 +1,13 @@
 import { Component, signal } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { TabsEnum } from '../../constants/tabs.enum'
+import { ProbabilitiesComponent } from './probabilities/probabilities.component'
+import { GraphComponent } from './graph/graph.component'
 
 @Component({
   selector: 'app-dashboard-content',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ProbabilitiesComponent, GraphComponent],
   templateUrl: './dashboard-content.component.html',
   styleUrl: './dashboard-content.component.scss',
 })

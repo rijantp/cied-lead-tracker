@@ -1,94 +1,3 @@
-<!-- <nav class="navbar bg-dark" data-bs-theme="dark">
-  <div class="container-fluid">
-    <img src="../../assets/meta-logo.png" />
-    <a class="text-white" routerLink="/">Dashboard</a>
-    <a class="text-white" routerLink="/">Leads</a>
-    <div class="input-group mb-3">
-      <i style="color: white" class="bi bi-search"></i>
-      <input
-        type="text"
-        class="form-control rounded-pill"
-        placeholder="Search Leads"
-        aria-label="Example text with button addon"
-        aria-describedby="button-addon1"
-      />
-    </div>
-    <button type="button" class="btn btn-primary rounded-pill">
-      + Add Leads
-    </button>
-    <div class="profile">
-      <img src="" alt="pic" />
-      <div class="text-white">Name</div>
-      <div class="text-white">Lead tracker user</div>
-    </div>
-    <div style="color: white" class="settings rounded-circle bg-secondary p-1">
-      <i class="bi bi-gear"></i>
-    </div>
-    <div style="color: white" class="logout rounded-circle bg-secondary p-1">
-      <i class="bi bi-box-arrow-right"></i>
-    </div>
-  </div>
-</nav> -->
-<!-- <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-  <div class="container-fluid">
-    <a class="navbar-brand"><img src="../../assets/meta-logo.png" /></a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div
-      class="collapse navbar-collapse justify-content-between"
-      id="navbarNavDropdown"
-    >
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Leads</a>
-        </li>
-      </ul>
-      <div class="d-flex">
-        <input
-          type="text"
-          class="form-control rounded-pill"
-          placeholder="Search Leads"
-          aria-label="Example text with button addon"
-          aria-describedby="button-addon1"
-        />
-        <button type="button" class="btn btn-primary rounded-pill text-nowrap">
-          + Add Leads
-        </button>
-      </div>
-      <div class="icon-wrapper d-flex">
-        <img class="rounded-circle" src="../../../../assets/Rijan.jpg" />
-        <div class="user-details d-flex flex-column">
-          <div class="text-white">name</div>
-          <div class="text-white">im me</div>
-        </div>
-        <div
-          style="color: white"
-          class="settings rounded-circle bg-secondary p-1 d-flex justify-content-center align-items-center"
-        >
-          <i class="bi bi-gear"></i>
-        </div>
-        <div
-          style="color: white"
-          class="logout rounded-circle bg-secondary p-1 d-flex justify-content-center align-items-center"
-        >
-          <i class="bi bi-box-arrow-right"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav> -->
 <nav class="navbar navbar-expand-md bg-dark" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand"><img src="../../assets/meta-logo.png" /></a>
@@ -127,17 +36,22 @@
           + Add Leads
         </button>
       </div>
-      <div class="icon-wrapper d-flex">
+      <div
+        class="icon-wrapper d-flex"
+        *ngIf="userDetails$ | async as userDetails"
+      >
         <img
           class="circle me-2 d-none d-lg-flex d-xl-flex d-xxl-flex d-md-flex"
-          src="../../../../assets/Rijan.jpg"
+          [src]="userDetails.image"
         />
         <div
           class="user-details d-flex flex-column me-3 d-none d-lg-flex d-xl-flex d-xxl-flex d-md-flex"
         >
-          <div class="text-white fw-medium fs-6">name</div>
+          <div class="text-white fw-medium fs-6">
+            {{ userDetails.first_name + ' ' + userDetails.last_name }}
+          </div>
           <div style="font-size: 0.75rem" class="text-white fw-medium">
-            im me
+            {{ userDetails.email }}
           </div>
         </div>
         <div
