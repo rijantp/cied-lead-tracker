@@ -8,6 +8,15 @@
 @import 'bootstrap/scss/utilities';
 @import './map-amends.scss';
 
+html {
+  @media only screen and (max-width: 576px) {
+    font-size: 50%;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 62.5%;
+  }
+}
+
 :root {
   --bs-body-font-family: 'Urbanist', sans-serif;
 
