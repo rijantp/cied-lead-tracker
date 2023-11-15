@@ -13,3 +13,14 @@ img {
   width: min-content;
   object-fit: fill;
 }
+
+.password-container {
+  position: relative;
+}
+
+.reset-button {
+  position: absolute;
+  right: 1.5%;
+  top: 55%;
+  cursor: pointer;
+}

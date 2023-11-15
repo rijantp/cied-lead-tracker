@@ -4,4 +4,5 @@ export interface AuthDetailsInterface {
   status: number
   email_verified: boolean
   terms_accepted: boolean
+  id: string
 }

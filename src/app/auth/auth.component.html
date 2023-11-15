@@ -38,7 +38,7 @@
             aria-describedby="emailHelp"
           />
         </div>
-        <div class="mb-2">
+        <div class="mb-2 password-container">
           <label for="exampleInputPassword1" class="form-label fw-medium fs-6"
             >Password</label
           >
@@ -48,6 +48,9 @@
             class="form-control"
             id="password"
           />
+          <span class="reset-button fw-semibold fs-6 text-primary"
+            >Reset Password</span
+          >
         </div>
 
         <div class="d-grid mt-5">
@@ -62,7 +65,12 @@
         </div>
       </form>
       <div class="fw-medium fs-6 mt-3 text-center">
-        Don’t have an account?<a routerLink="/login"> Signup</a>
+        Don’t have an account?<a
+          routerLink="/login"
+          class="link-underline-primary"
+        >
+          Signup</a
+        >
       </div>
     </div>
   </div>

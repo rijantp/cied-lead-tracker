@@ -10,7 +10,7 @@ import { AuthDetailsInterface } from '../types/auth-details.interface'
   providedIn: 'root',
 })
 export class AuthService {
-  userAuthSig = signal<undefined | null | AuthDetailsInterface>(undefined)
+  userAuthSig = signal<undefined | AuthDetailsInterface>(undefined)
 
   http: HttpClient = inject(HttpClient)
 
