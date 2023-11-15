@@ -4,6 +4,7 @@ import { TabsEnum } from '../../constants/tabs.enum'
 import { ProbabilitiesComponent } from './probabilities/probabilities.component'
 import { GraphComponent } from './graph/graph.component'
 import { ActiveLeadStatusComponent } from './active-lead-status/active-lead-status.component'
+import { ActiveLeadsComponent } from './active-leads/active-leads.component'
 
 @Component({
   selector: 'app-dashboard-content',
@@ -13,6 +14,7 @@ import { ActiveLeadStatusComponent } from './active-lead-status/active-lead-stat
     ProbabilitiesComponent,
     GraphComponent,
     ActiveLeadStatusComponent,
+    ActiveLeadsComponent,
   ],
   templateUrl: './dashboard-content.component.html',
   styleUrl: './dashboard-content.component.scss',

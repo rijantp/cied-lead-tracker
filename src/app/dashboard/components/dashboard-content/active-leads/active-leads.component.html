@@ -1,0 +1,44 @@
+<div class="d-flex text-nowrap align-items-center" style="gap: 1.5rem">
+  <div class="col-2 fw-semibold fs-6">Recently active leads</div>
+  <input
+    type="text"
+    class="col-2 rounded-pill border border-light-subtle"
+    placeholder="Search Leads"
+    aria-label="Example text with button addon"
+    aria-describedby="button-addon1"
+    style="font-size: 0.9rem; padding: 0.2rem 1rem"
+  />
+</div>
+<div class="table-responsive" style="margin-top: 0.75rem">
+  <table class="table">
+    <thead>
+      <tr>
+        <th
+          class="fw-bold"
+          style="font-size: 0.75rem"
+          *ngFor="let header of tableHeaders"
+        >
+          {{ header }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="fw-medium" style="font-size: 0.9rem">
+          <img
+            src="../../../../../assets/fb-logo.png"
+            alt="logo"
+            style="margin-right: 0.75rem"
+          />name
+        </td>
+        <td></td>
+        <td></td>
+        <td><span class="badge rounded-pill text-bg-primary">Primary</span></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
