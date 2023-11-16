@@ -14,7 +14,6 @@ export const tokenInterceptor: HttpInterceptorFn = (
       headers: req.headers.set('BEARER', token).set('USER-ID', id),
     })
   }
-  console.log('called')
 
   return next(req)
 }
