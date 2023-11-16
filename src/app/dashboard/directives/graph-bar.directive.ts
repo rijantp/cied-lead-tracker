@@ -22,7 +22,6 @@ export class GraphBarDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     const style = GraphUtility.getStyle(this.appGraphBar, this.maxDomain)
-    console.log(style)
 
     this.renderer.setStyle(
       this.eleRef.nativeElement,

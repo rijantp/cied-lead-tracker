@@ -13,6 +13,8 @@ import { toObservable } from '@angular/core/rxjs-interop'
 import { StageTypeCountPipe } from '../../pipes/stage-type-count.pipe'
 import { ApiProbabilityInterface } from '../../types/api-probability.interface'
 import { ProbabilityInterface } from '../../types/probability.interface'
+import { LeadInterface } from '../../types/lead.interface'
+import { ApiLeadsListInterface } from '../../types/api-leads-list.interface'
 
 @Component({
   selector: 'app-dashboard-content',
@@ -55,6 +57,16 @@ export class DashboardContentComponent implements OnInit {
         (probabilityDetails: ApiProbabilityInterface) => probabilityDetails.data
       )
     )
+
+  recentlyActiveLeads$: Observable<LeadInterface[]> = this.tabSelected$.pipe(
+    switchMap((selectedTab: string) => {
+      return this.dashboardService.getLeadsList(selectedTab.toLowerCase())
+    }),
+    map(
+      (probabilityDetails: ApiLeadsListInterface) =>
+        probabilityDetails.data.results
+    )
+  )
 
   tabsList: TabsEnum[] = [TabsEnum.ACTIVE, TabsEnum.WON, TabsEnum.LOST]
 

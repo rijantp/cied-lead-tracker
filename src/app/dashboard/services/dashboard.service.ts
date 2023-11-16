@@ -6,6 +6,7 @@ import { ApiUserDetailsInterface } from '../types/api-user-details.interface'
 import { ApiGraphDetailsInterface } from '../types/api-graph-details.interface'
 import { ApiProbabilityInterface } from '../types/api-probability.interface'
 import { ApiActiveLeadsInterface } from '../types/api-active-leads.interface'
+import { ApiLeadsListInterface } from '../types/api-leads-list.interface'
 
 @Injectable({
   providedIn: 'root',
@@ -36,6 +37,12 @@ export class DashboardService {
   getActiveLeadsStatus(): Observable<ApiActiveLeadsInterface> {
     return this.http.get<ApiActiveLeadsInterface>(
       `${environment.apiBaseUrl}leads/stage/`
+    )
+  }
+
+  getLeadsList(stageType: string): Observable<ApiLeadsListInterface> {
+    return this.http.get<ApiLeadsListInterface>(
+      `${environment.apiBaseUrl}leads/?stage_type=${stageType}&limit=10&offset=0&search=&ordering=-probability`
     )
   }
 }

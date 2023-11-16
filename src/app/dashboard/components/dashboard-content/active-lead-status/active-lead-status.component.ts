@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core'
-import { CommonModule } from '@angular/common'
+import { CommonModule, DecimalPipe } from '@angular/common'
 import { DashboardService } from '../../../services/dashboard.service'
 import { ActiveLeadsStatusInterface } from '../../../types/active-leads-status.interface'
 import { Observable, map } from 'rxjs'
@@ -8,7 +8,7 @@ import { ApiActiveLeadsInterface } from '../../../types/api-active-leads.interfa
 @Component({
   selector: 'app-active-lead-status',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, DecimalPipe],
   templateUrl: './active-lead-status.component.html',
   styleUrl: './active-lead-status.component.scss',
 })

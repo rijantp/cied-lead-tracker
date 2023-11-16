@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core'
+import { Component, Input } from '@angular/core'
 import { CommonModule, DecimalPipe } from '@angular/common'
 import { ProbabilityListInterface } from '../../../../types/probability-list.interface'
 
@@ -9,12 +9,6 @@ import { ProbabilityListInterface } from '../../../../types/probability-list.int
   templateUrl: './horizontal-progress-bar.component.html',
   styleUrl: './horizontal-progress-bar.component.scss',
 })
-export class HorizontalProgressBarComponent implements OnChanges {
+export class HorizontalProgressBarComponent {
   @Input({ required: true }) probabilityDetails!: ProbabilityListInterface
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes) {
-      console.log(changes['probabilityDetails'])
-    }
-  }
 }

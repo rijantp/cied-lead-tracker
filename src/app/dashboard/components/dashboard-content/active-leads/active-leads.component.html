@@ -9,8 +9,8 @@
     style="font-size: 0.9rem; padding: 0.2rem 1rem"
   />
 </div>
-<div class="table-responsive" style="margin-top: 0.75rem">
-  <table class="table">
+<div class="table-responsive-lg" style="margin-top: 0.75rem">
+  <table class="table text-nowrap">
     <thead>
       <tr>
         <th
@@ -23,22 +23,36 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td class="fw-medium" style="font-size: 0.9rem">
-          <img
-            src="../../../../../assets/fb-logo.png"
-            alt="logo"
-            style="margin-right: 0.75rem"
-          />name
+      <tr
+        class="fw-semibold"
+        style="font-size: 0.9rem"
+        *ngFor="let lead of recentlyActiveLeads"
+      >
+        <td class="d-flex align-items-center">
+          <ng-container *ngIf="lead.organization.logo as logo; else blank">
+            <img [src]="logo" alt="logo" style="margin-right: 0.75rem" />
+          </ng-container>
+          {{ lead.organization.name }}
         </td>
-        <td></td>
-        <td></td>
-        <td><span class="badge rounded-pill text-bg-primary">Primary</span></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>{{ lead.created_on }}</td>
+        <td>{{ lead.current_stage.name }}</td>
+        <td>
+          <span
+            class="badge rounded-pill"
+            [appProbabilityBadge]="lead.probability"
+          ></span>
+        </td>
+        <td>{{ lead.organization.team_size }}</td>
+        <td>{{ lead.organization.country }}</td>
+        <td>{{ lead.organization.revenue }}</td>
+        <td>{{ lead.category.name }}</td>
       </tr>
     </tbody>
   </table>
 </div>
+<ng-template #blank>
+  <div
+    style="width: 1.5rem; aspect-ratio: 1; margin-right: 0.75rem"
+    class="bg-secondary-subtle rounded"
+  ></div>
+</ng-template>

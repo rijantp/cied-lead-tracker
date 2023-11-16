@@ -1,10 +1,12 @@
-import { Component } from '@angular/core'
+import { Component, Input } from '@angular/core'
 import { CommonModule } from '@angular/common'
+import { LeadInterface } from '../../../types/lead.interface'
+import { ProbabilityBadgeDirective } from '../../../directives/probability-badge.directive'
 
 @Component({
   selector: 'app-active-leads',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ProbabilityBadgeDirective],
   templateUrl: './active-leads.component.html',
   styleUrl: './active-leads.component.scss',
 })
@@ -19,4 +21,5 @@ export class ActiveLeadsComponent {
     'Revenue',
     'Category',
   ]
+  @Input() recentlyActiveLeads: LeadInterface[] = []
 }

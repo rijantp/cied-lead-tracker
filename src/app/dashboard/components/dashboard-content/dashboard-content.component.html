@@ -46,6 +46,8 @@
     <app-active-lead-status></app-active-lead-status>
   </div>
   <div style="margin-top: 2.5rem" class="row">
-    <app-active-leads></app-active-leads>
+    <ng-container *ngIf="recentlyActiveLeads$ | async as recentLeads">
+      <app-active-leads [recentlyActiveLeads]="recentLeads"></app-active-leads>
+    </ng-container>
   </div>
 </div>
