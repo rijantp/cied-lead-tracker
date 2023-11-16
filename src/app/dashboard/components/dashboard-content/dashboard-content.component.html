@@ -38,7 +38,11 @@
     </ng-container>
     <app-graph [graphDetails]="graphDetails.graph" class="col-lg-7"></app-graph>
   </div>
-  <div style="margin-top: 2.5rem" class="row">
+  <div
+    *ngIf="tabSelectedSig() === tabs.ACTIVE"
+    style="margin-top: 2.5rem"
+    class="row"
+  >
     <app-active-lead-status></app-active-lead-status>
   </div>
   <div style="margin-top: 2.5rem" class="row">

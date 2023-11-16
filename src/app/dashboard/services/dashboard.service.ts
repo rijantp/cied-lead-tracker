@@ -5,6 +5,7 @@ import { environment } from '../../../environments/environment'
 import { ApiUserDetailsInterface } from '../types/api-user-details.interface'
 import { ApiGraphDetailsInterface } from '../types/api-graph-details.interface'
 import { ApiProbabilityInterface } from '../types/api-probability.interface'
+import { ApiActiveLeadsInterface } from '../types/api-active-leads.interface'
 
 @Injectable({
   providedIn: 'root',
@@ -29,6 +30,12 @@ export class DashboardService {
   ): Observable<ApiProbabilityInterface> {
     return this.http.get<ApiProbabilityInterface>(
       `${environment.apiBaseUrl}leads/probability/analysis/?stage_type=${stageType}`
+    )
+  }
+
+  getActiveLeadsStatus(): Observable<ApiActiveLeadsInterface> {
+    return this.http.get<ApiActiveLeadsInterface>(
+      `${environment.apiBaseUrl}leads/stage/`
     )
   }
 }
