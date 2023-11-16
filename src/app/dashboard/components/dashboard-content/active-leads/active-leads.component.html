@@ -9,6 +9,8 @@
     aria-label="Example text with button addon"
     aria-describedby="button-addon1"
     style="font-size: 0.9rem; padding: 0.2rem 1rem"
+    [(ngModel)]="searchInput"
+    (ngModelChange)="onSearch($event)"
   />
 </div>
 <div class="table-responsive-lg" style="margin-top: 0.75rem">
@@ -28,13 +30,13 @@
       <tr
         class="fw-semibold"
         style="font-size: 0.9rem"
-        *ngFor="let lead of recentlyActiveLeads"
+        *ngFor="let lead of filteredListSig()"
       >
         <td class="d-flex align-items-center">
           <ng-container *ngIf="lead.organization.logo as logo; else blank">
             <img [src]="logo" alt="logo" style="margin-right: 0.75rem" />
           </ng-container>
-          {{ lead.organization.name }}
+          {{ lead.name }}
         </td>
         <td>{{ lead.created_on }}</td>
         <td>{{ lead.current_stage.name }}</td>
