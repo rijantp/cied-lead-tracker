@@ -1,0 +1,32 @@
+<div
+  class="progress h-100"
+  role="progressbar"
+  aria-label="Basic example"
+  aria-valuemin="0"
+  aria-valuemax="100"
+  style="background-color: #ffffff; position: relative"
+>
+  <div
+    class="progress-bar"
+    style="width: 25%"
+    [ngStyle]="{
+      'background-color': probabilityDetails.color,
+      width: probabilityDetails.probability
+    }"
+  ></div>
+  <div class="container-fluid h-100" style="position: absolute">
+    <div
+      class="row text-center text-nowrap h-100 align-items-center w-100 fw-bold"
+    >
+      <div class="col-2" style="font-size: 1.1rem">
+        {{ probabilityDetails.probability }}
+      </div>
+      <div class="col-4" style="font-size: 0.9rem">
+        {{ probabilityDetails.desc }}
+      </div>
+      <div class="col-2 offset-4" style="font-size: 1.1rem">
+        {{ (probabilityDetails.leads | number : '2.0-0') + ' Leads' }}
+      </div>
+    </div>
+  </div>
+</div>

@@ -30,7 +30,12 @@
     </div>
   </div>
   <div style="margin-top: 2.5rem" class="row">
-    <app-probabilities class="col-lg-5"></app-probabilities>
+    <ng-container *ngIf="probabilityDetails$ | async as probabilityDetails">
+      <app-probabilities
+        [probabilityDetails]="probabilityDetails"
+        class="col-lg-5"
+      ></app-probabilities>
+    </ng-container>
     <app-graph [graphDetails]="graphDetails.graph" class="col-lg-7"></app-graph>
   </div>
   <div style="margin-top: 2.5rem" class="row">

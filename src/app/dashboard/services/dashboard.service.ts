@@ -4,6 +4,7 @@ import { Observable } from 'rxjs'
 import { environment } from '../../../environments/environment'
 import { ApiUserDetailsInterface } from '../types/api-user-details.interface'
 import { ApiGraphDetailsInterface } from '../types/api-graph-details.interface'
+import { ApiProbabilityInterface } from '../types/api-probability.interface'
 
 @Injectable({
   providedIn: 'root',
@@ -23,8 +24,10 @@ export class DashboardService {
     )
   }
 
-  getProbabilityDetails(stageType: string): Observable<any> {
-    return this.http.get<any>(
+  getProbabilityDetails(
+    stageType: string
+  ): Observable<ApiProbabilityInterface> {
+    return this.http.get<ApiProbabilityInterface>(
       `${environment.apiBaseUrl}leads/probability/analysis/?stage_type=${stageType}`
     )
   }

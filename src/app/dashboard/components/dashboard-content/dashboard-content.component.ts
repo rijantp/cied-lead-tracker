@@ -11,6 +11,8 @@ import { Observable, switchMap, map } from 'rxjs'
 import { ApiGraphDetailsInterface } from '../../types/api-graph-details.interface'
 import { toObservable } from '@angular/core/rxjs-interop'
 import { StageTypeCountPipe } from '../../pipes/stage-type-count.pipe'
+import { ApiProbabilityInterface } from '../../types/api-probability.interface'
+import { ProbabilityInterface } from '../../types/probability.interface'
 
 @Component({
   selector: 'app-dashboard-content',
@@ -42,9 +44,23 @@ export class DashboardContentComponent implements OnInit {
     map((graphDetails: ApiGraphDetailsInterface) => graphDetails.data)
   )
 
+  probabilityDetails$: Observable<ProbabilityInterface> =
+    this.tabSelected$.pipe(
+      switchMap((selectedTab: string) => {
+        return this.dashboardService.getProbabilityDetails(
+          selectedTab.toLowerCase()
+        )
+      }),
+      map(
+        (probabilityDetails: ApiProbabilityInterface) => probabilityDetails.data
+      )
+    )
+
   tabsList: TabsEnum[] = [TabsEnum.ACTIVE, TabsEnum.WON, TabsEnum.LOST]
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.tabSelectedSig.set(TabsEnum.ACTIVE)
+  }
 
   onSelectingTab(tab: TabsEnum): void {
     this.tabSelectedSig.set(tab)
