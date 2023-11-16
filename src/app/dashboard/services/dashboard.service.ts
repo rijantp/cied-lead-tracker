@@ -3,6 +3,7 @@ import { Injectable, inject } from '@angular/core'
 import { Observable } from 'rxjs'
 import { environment } from '../../../environments/environment'
 import { ApiUserDetailsInterface } from '../types/api-user-details.interface'
+import { ApiGraphDetailsInterface } from '../types/api-graph-details.interface'
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +14,18 @@ export class DashboardService {
   getUserDetails(): Observable<ApiUserDetailsInterface> {
     return this.http.get<ApiUserDetailsInterface>(
       `${environment.apiBaseUrl}accounts/user/85NPW/`
+    )
+  }
+
+  getGraphDetails(stageType: string): Observable<ApiGraphDetailsInterface> {
+    return this.http.get<ApiGraphDetailsInterface>(
+      `${environment.apiBaseUrl}leads/dashboard/graph/?stage_type=${stageType}`
+    )
+  }
+
+  getProbabilityDetails(stageType: string): Observable<any> {
+    return this.http.get<any>(
+      `${environment.apiBaseUrl}leads/probability/analysis/?stage_type=${stageType}`
     )
   }
 }

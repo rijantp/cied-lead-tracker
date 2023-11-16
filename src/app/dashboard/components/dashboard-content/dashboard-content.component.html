@@ -2,8 +2,9 @@
 <div class="container" style="margin-top: 2rem">
   <div class="row">
     <div
-      class="col-12 col-sm-8 col-md-4 container m-0 rounded-pill"
+      class="col-12 col-sm-8 col-md-6 col-xl-4 container m-0 rounded-pill"
       style="background-color: #ffffff"
+      *ngIf="graphDetails$ | async as graphDetails"
     >
       <div class="row">
         <ng-container *ngFor="let tab of tabsList">
@@ -13,13 +14,13 @@
             (click)="onSelectingTab(tab)"
             *ngIf="tabSelectedSig() !== tab"
           >
-            {{ tab }}
+            {{ tab | stageTypeCount : graphDetails.stage_type_count }}
           </div>
           <div
             class="card-text col-4 fw-semibold fs-6 btn btn-primary rounded-pill"
             *ngIf="tabSelectedSig() === tab"
           >
-            {{ tab }}
+            {{ tab | stageTypeCount : graphDetails.stage_type_count }}
           </div>
         </ng-container>
       </div>
