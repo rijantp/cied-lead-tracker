@@ -56,13 +56,14 @@
         </div>
         <div
           style="color: #35383e"
-          class="settings circle bg-secondary p-1 d-flex justify-content-center align-items-center me-2 d-none d-lg-flex d-xl-flex d-xxl-flex d-md-flex"
+          class="settings circle bg-secondary p-2 d-flex justify-content-center align-items-center me-2 d-none d-lg-flex d-xl-flex d-xxl-flex d-md-flex"
         >
           <i class="bi bi-gear text-white"></i>
         </div>
         <div
-          style="color: #35383e"
-          class="logout circle bg-secondary p-1 d-flex justify-content-center align-items-center"
+          (click)="logout()"
+          style="color: #35383e; cursor: pointer"
+          class="logout circle bg-secondary p-2 d-flex justify-content-center align-items-center"
         >
           <i class="bi bi-box-arrow-right text-white"></i>
         </div>

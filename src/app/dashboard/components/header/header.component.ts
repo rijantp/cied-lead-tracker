@@ -4,6 +4,7 @@ import { DashboardService } from '../../services/dashboard.service'
 import { Observable, map } from 'rxjs'
 import { UserDetailsInterface } from '../../types/user-details.interface'
 import { ApiUserDetailsInterface } from '../../types/api-user-details.interface'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-header',
@@ -14,6 +15,7 @@ import { ApiUserDetailsInterface } from '../../types/api-user-details.interface'
 })
 export class HeaderComponent implements OnInit {
   dashboardService: DashboardService = inject(DashboardService)
+  router: Router = inject(Router)
 
   userDetails$!: Observable<UserDetailsInterface>
 
@@ -21,5 +23,9 @@ export class HeaderComponent implements OnInit {
     this.userDetails$ = this.dashboardService
       .getUserDetails()
       .pipe(map((userDetails: ApiUserDetailsInterface) => userDetails.data))
+  }
+
+  logout(): void {
+    this.router.navigate(['login'])
   }
 }

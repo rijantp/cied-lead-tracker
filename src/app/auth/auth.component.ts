@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core'
+import { Component, OnInit, inject } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { Router, RouterLink } from '@angular/router'
 import {
@@ -18,7 +18,7 @@ import { ApiLoginInterface } from './types/api-login.interface'
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.scss',
 })
-export class AuthComponent {
+export class AuthComponent implements OnInit {
   router: Router = inject(Router)
   authService: AuthService = inject(AuthService)
 
@@ -34,6 +34,9 @@ export class AuthComponent {
       validators: [Validators.required],
     }),
   })
+  ngOnInit(): void {
+    this.authService.userAuthSig.set(undefined)
+  }
 
   onLogin(): void {
     const requestBody: LoginRequestInterface = {
