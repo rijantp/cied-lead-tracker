@@ -28,29 +28,21 @@
       <div class="d-flex ms-auto me-auto">
         <input
           type="text"
-          class="form-control rounded-pill me-3 d-none d-lg-flex d-xl-flex d-xxl-flex d-md-flex"
+          class="form-control rounded-pill me-3"
           placeholder="Search Leads"
           aria-label="Example text with button addon"
           aria-describedby="button-addon1"
         />
-        <button
-          type="button"
-          class="btn btn-primary rounded-pill text-nowrap d-none d-lg-flex d-xl-flex d-xxl-flex d-md-flex"
-        >
+        <button type="button" class="btn btn-primary rounded-pill text-nowrap">
           + Add Leads
         </button>
       </div>
       <div
-        class="icon-wrapper d-flex"
+        class="icon-wrapper d-flex my-3 my-3 my-md-0"
         *ngIf="userDetails$ | async as userDetails"
       >
-        <img
-          class="circle me-2 d-none d-lg-flex d-xl-flex d-xxl-flex d-md-flex"
-          [src]="userDetails.image"
-        />
-        <div
-          class="user-details d-flex flex-column me-3 d-none d-lg-flex d-xl-flex d-xxl-flex d-md-flex"
-        >
+        <img class="circle me-2" [src]="userDetails.image" />
+        <div class="user-details d-flex flex-column me-3">
           <div class="text-white fw-medium fs-6">
             {{ userDetails.first_name + ' ' + userDetails.last_name }}
           </div>
@@ -60,7 +52,7 @@
         </div>
         <div
           style="color: #35383e"
-          class="settings circle bg-secondary p-2 d-flex justify-content-center align-items-center me-2 d-none d-lg-flex d-xl-flex d-xxl-flex d-md-flex"
+          class="settings circle bg-secondary p-2 d-flex justify-content-center align-items-center me-2"
         >
           <i class="bi bi-gear text-white"></i>
         </div>
