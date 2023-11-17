@@ -31,7 +31,7 @@ export class ActiveLeadsComponent {
   filteredListSig = computed(() => {
     return this.searchSig().length > 0
       ? this.leadsListSig().filter((lead: LeadInterface) =>
-          lead.name.toLowerCase().includes(this.searchSig())
+          lead.name.toLowerCase().includes(this.searchSig().toLowerCase())
         )
       : this.leadsListSig()
   })
