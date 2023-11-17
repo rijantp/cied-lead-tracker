@@ -5,9 +5,15 @@
   height: 100vh;
 }
 
-.container__static {
-  background-image: url(../../assets/login-static-background.png);
-  padding: 6rem 0 0 6rem;
+.container {
+  &__static {
+    background-image: url(../../assets/login-static-background.png);
+    padding: 6rem 0 0 6rem;
+  }
+
+  &__form {
+    padding: 0 5.5rem;
+  }
 }
 
 img {
