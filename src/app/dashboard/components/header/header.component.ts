@@ -4,12 +4,12 @@ import { DashboardService } from '../../services/dashboard.service'
 import { Observable, map } from 'rxjs'
 import { UserDetailsInterface } from '../../types/user-details.interface'
 import { ApiUserDetailsInterface } from '../../types/api-user-details.interface'
-import { Router } from '@angular/router'
+import { Router, RouterLink } from '@angular/router'
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, AsyncPipe],
+  imports: [CommonModule, AsyncPipe, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

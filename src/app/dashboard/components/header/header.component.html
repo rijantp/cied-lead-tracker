@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-md bg-dark" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand"><img src="../../assets/meta-logo.png" /></a>
+    <a class="navbar-brand" routerLink="/"
+      ><img src="../../assets/meta-logo.png"
+    /></a>
     <button
       class="navbar-toggler"
       type="button"
@@ -15,10 +17,12 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+          <a class="nav-link active" aria-current="page" routerLink="/"
+            >Dashboard</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Leads</a>
+          <a class="nav-link disabled" routerLink="/">Leads</a>
         </li>
       </ul>
       <div class="d-flex ms-auto me-auto">
