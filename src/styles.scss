@@ -1,12 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600;700&display=swap');
-@import 'bootstrap/scss/functions';
-@import 'bootstrap/scss/variables';
-@import 'bootstrap/scss/variables-dark';
-@import 'bootstrap/scss/maps';
-@import 'bootstrap/scss/mixins';
-@import 'bootstrap/scss/utilities';
-@import './map-amends.scss';
 
 html {
   @media only screen and (max-width: 576px) {
@@ -19,8 +12,4 @@ html {
 
 :root {
   --bs-body-font-family: 'Urbanist', sans-serif;
-
-  @each $spacer, $value in $spacers {
-    --theme-spacer-#{$spacer}: #{$value};
-  }
 }
