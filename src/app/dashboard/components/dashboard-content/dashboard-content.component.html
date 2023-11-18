@@ -30,7 +30,10 @@
         class="col-lg-5"
       ></app-probabilities>
     </ng-container>
-    <app-graph [graphDetails]="graphDetails.graph" class="col-lg-7"></app-graph>
+    <app-graph
+      [graphDetails]="graphDetails.graph"
+      class="col-lg-7 mt-4 mt-lg-0"
+    ></app-graph>
   </div>
   <div *ngIf="tabSelectedSig() === tabs.ACTIVE" class="row mt-2_5">
     <app-active-lead-status></app-active-lead-status>

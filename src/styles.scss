@@ -2,11 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600;700&display=swap');
 
 html {
-  @media only screen and (max-width: 576px) {
-    font-size: 50%;
+  @media only screen and (max-width: 1200px) {
+    font-size: 75%;
   }
   @media only screen and (max-width: 768px) {
     font-size: 62.5%;
+  }
+  @media only screen and (max-width: 576px) {
+    font-size: 50%;
   }
 }
 

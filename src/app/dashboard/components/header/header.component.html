@@ -46,7 +46,11 @@
         class="icon-wrapper d-flex my-3 my-3 my-md-0"
         *ngIf="userDetails$ | async as userDetails"
       >
-        <img class="circle me-2" [src]="userDetails.image" />
+        <img
+          class="circle me-2"
+          [src]="userDetails.image"
+          alt="profile photo"
+        />
         <div class="user-details d-flex flex-column me-3">
           <div class="text-white fw-medium fs-6">
             {{ userDetails.first_name + ' ' + userDetails.last_name }}
