@@ -1,40 +1,31 @@
-<div class="d-flex text-nowrap align-items-center" style="gap: 1.5rem">
-  <div class="col-6 col-sm-3 col-lg-2 fw-semibold fs-6">
+<div class="d-flex text-nowrap align-items-center">
+  <div class="col-6 col-sm-3 col-lg-2 fw-semibold fs-6 gap-1_5">
     Recently active leads
   </div>
   <input
     type="text"
-    class="col-6 col-sm-3 col-lg-2 rounded-pill border border-light-subtle"
+    class="col-6 col-sm-3 col-lg-2 rounded-pill border border-light-subtle fs-0_9 search-box"
     placeholder="Search Leads"
     aria-label="Example text with button addon"
     aria-describedby="button-addon1"
-    style="font-size: 0.9rem; padding: 0.2rem 1rem"
     [(ngModel)]="searchInput"
     (ngModelChange)="onSearch($event)"
   />
 </div>
-<div class="table-responsive-lg" style="margin-top: 0.75rem">
+<div class="table-responsive-lg mt-0_75">
   <table class="table text-nowrap">
     <thead>
       <tr>
-        <th
-          class="fw-bold"
-          style="font-size: 0.75rem"
-          *ngFor="let header of tableHeaders"
-        >
+        <th class="fw-bold fs_75" *ngFor="let header of tableHeaders">
           {{ header }}
         </th>
       </tr>
     </thead>
     <tbody>
-      <tr
-        class="fw-semibold"
-        style="font-size: 0.9rem"
-        *ngFor="let lead of filteredListSig()"
-      >
+      <tr class="fw-semibold fs-0_9" *ngFor="let lead of filteredListSig()">
         <td class="d-flex align-items-center">
           <ng-container *ngIf="lead.organization.logo as logo; else blank">
-            <img [src]="logo" alt="logo" style="margin-right: 0.75rem" />
+            <img [src]="logo" alt="logo" class="mr-0_75" />
           </ng-container>
           {{ lead.name }}
         </td>
@@ -55,8 +46,5 @@
   </table>
 </div>
 <ng-template #blank>
-  <div
-    style="width: 1.5rem; aspect-ratio: 1; margin-right: 0.75rem"
-    class="bg-secondary-subtle rounded"
-  ></div>
+  <div class="bg-secondary-subtle rounded mr-0_75 blank-container"></div>
 </ng-template>
