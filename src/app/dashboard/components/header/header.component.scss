@@ -2,8 +2,11 @@ img {
   width: 35px;
 }
 
-.circle-icon {
+.circle {
   clip-path: circle();
+}
+
+.circle-icon {
   color: #35383e;
   cursor: pointer;
 }
