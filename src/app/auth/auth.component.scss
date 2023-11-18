@@ -31,3 +31,7 @@ img {
   top: 55%;
   cursor: pointer;
 }
+
+input:focus + span {
+  display: none;
+}
