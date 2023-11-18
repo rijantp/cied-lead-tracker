@@ -2,15 +2,20 @@
   <div class="col-6 col-sm-3 col-lg-2 fw-semibold fs-6 gap-1_5">
     Recently active leads
   </div>
-  <input
-    type="text"
-    class="col-6 col-sm-3 col-lg-2 rounded-pill border border-light-subtle fs-0_9 search-box"
-    placeholder="Search Leads"
-    aria-label="Example text with button addon"
-    aria-describedby="button-addon1"
-    [(ngModel)]="searchInput"
-    (ngModelChange)="onSearch($event)"
-  />
+  <div
+    class="col-6 col-sm-3 col-lg-2 container__searchBox rounded-pill border border-light-subtle"
+  >
+    <i class="bi bi-search ms-3 text-body-secondary fs_75"></i>
+    <input
+      type="text"
+      class="fs-0_9 search-box ms-1"
+      placeholder="Search Leads"
+      aria-label="Example text with button addon"
+      aria-describedby="button-addon1"
+      [(ngModel)]="searchInput"
+      (ngModelChange)="onSearch($event)"
+    />
+  </div>
 </div>
 <div class="table-responsive-lg mt-0_75">
   <table class="table text-nowrap">

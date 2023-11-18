@@ -18,7 +18,7 @@
 }
 
 .search-box {
-  padding: 0.2rem 1rem;
+  //padding: 0.2rem 1rem;
 }
 
 .mt-0_75 {
@@ -31,4 +31,18 @@
 .blank-container {
   width: 1.5rem;
   aspect-ratio: 1;
+}
+
+input {
+  border: none !important;
+  background-color: inherit;
+  width: 70%;
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.container__searchBox {
+  background-color: #ffffff;
 }
