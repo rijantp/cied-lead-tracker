@@ -1,11 +1,10 @@
 <p class="fw-semibold fs-6">Active leads status</p>
 <div
-  class="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row"
-  style="gap: 1.2rem"
+  class="d-flex justify-content-between flex-column flex-sm-row flex-md-row flex-lg-row flex-xl-row flex-xxl-row gap-1_2"
 >
   <div *ngFor="let status of activeLeadStatus$ | async" class="card w-100">
     <div class="card-body">
-      <p style="font-size: 1.1rem" class="fw-medium m-0">{{ status.name }}</p>
+      <p class="fw-medium m-0 fs-1_1">{{ status.name }}</p>
       <p class="fw-bold fs-4 m-0">{{ status.lead_count | number : '2.0-0' }}</p>
     </div>
   </div>
