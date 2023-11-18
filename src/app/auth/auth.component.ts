@@ -6,6 +6,7 @@ import {
   FormGroup,
   Validators,
   ReactiveFormsModule,
+  FormBuilder,
 } from '@angular/forms'
 import { AuthService } from './services/auth.service'
 import { LoginRequestInterface } from './types/login-request.interface'
@@ -20,20 +21,16 @@ import { ApiLoginInterface } from './types/api-login.interface'
 })
 export class AuthComponent implements OnInit {
   router: Router = inject(Router)
+  fb: FormBuilder = inject(FormBuilder)
   authService: AuthService = inject(AuthService)
 
   disableLogin: boolean = false
 
-  loginForm: FormGroup = new FormGroup({
-    email: new FormControl('', {
-      nonNullable: true,
-      validators: [Validators.required],
-    }),
-    password: new FormControl('', {
-      nonNullable: true,
-      validators: [Validators.required],
-    }),
+  loginForm: FormGroup = this.fb.nonNullable.group({
+    email: ['', [Validators.required]],
+    password: ['', [Validators.required]],
   })
+
   ngOnInit(): void {
     this.authService.userAuthSig.set(undefined)
   }
