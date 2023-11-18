@@ -11,6 +11,18 @@ img {
   cursor: pointer;
 }
 
-.search-box {
+.container__searchBox {
   background-color: #35383e;
+}
+
+input {
+  border: none !important;
+  background-color: inherit;
+  width: 70%;
+
+  &:focus {
+    outline: none !important;
+    background-color: inherit;
+    box-shadow: none;
+  }
 }

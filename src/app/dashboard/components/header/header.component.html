@@ -26,13 +26,18 @@
         </li>
       </ul>
       <div class="d-flex ms-auto me-auto">
-        <input
-          type="text"
-          class="form-control rounded-pill me-3 search-box"
-          placeholder="Search Leads"
-          aria-label="Example text with button addon"
-          aria-describedby="button-addon1"
-        />
+        <div
+          class="me-3 d-flex align-items-center container__searchBox rounded-pill border border-light-subtle"
+        >
+          <i class="bi bi-search ms-3 text-body-secondary fs_75"></i>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search Leads"
+            aria-label="Example text with button addon"
+            aria-describedby="button-addon1"
+          />
+        </div>
         <button type="button" class="btn btn-primary rounded-pill text-nowrap">
           + Add Leads
         </button>
