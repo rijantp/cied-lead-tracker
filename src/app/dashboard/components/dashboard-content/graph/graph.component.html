@@ -1,14 +1,6 @@
 <p class="fw-semibold fs-6">Graph</p>
-<div
-  style="
-    background-color: #ffffff;
-    height: 251px;
-    padding: 1.3rem;
-    padding-right: 0;
-  "
-  class="container"
->
-  <div class="row" style="height: 80%">
+<div class="container">
+  <div class="row h-80">
     <div class="d-flex flex-column col-1 justify-content-between h-100">
       <p *ngFor="let domain of graphDomains" class="m-0">{{ domain }}</p>
     </div>
@@ -20,7 +12,7 @@
       class="col-1 align-self-end"
     ></div>
   </div>
-  <div class="row fw-bold text-center" style="height: 20%; font-size: 0.75rem">
+  <div class="row fw-bold text-center fs_75 h-20">
     <div
       class="col-1 offset-1 d-flex justify-content-center"
       *ngFor="let stage of graphData"
